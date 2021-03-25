@@ -1,0 +1,11 @@
+g.DrawLine(tickPen, 30, 28, 30, 32);
+g.DrawString(0, tickFont, tickBrush, 30, 20, sf);
+g.DrawLine(tickPen, 28, 30, 32, 30);
+g.DrawString(0, tickFont, tickBrush, 20, 30, sf);
+g.FillRectangle(maskBrush, 45, 45, 10, 10);
+g.FillRectangle(renderedMaskBrush, 48, 48, 4, 4);
+var path = new GraphicsPath([(40, 40),(60, 40),(60, 60),(40, 60)], [1,1,1,1], FillMode.Alternate);
+g.FillPath(contourFilling, path);
+g.DrawPath(contourPen, path);
+g.DrawRectangle(contourPen, 38, 38, 4, 4);
+g.DrawEllipse(contourPen, 38, 58, 4, 4);

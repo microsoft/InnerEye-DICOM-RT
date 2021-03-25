@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Microsoft.RTConvert.Console": {
+      "commandName": "Project",
+      "commandLineArgs": "--in-file ..\\..\\..\\..\\..\\Microsoft.RTConvert.Converters.Tests\\TestData\\hnsegmentation.nii.gz --reference-series ..\\..\\..\\..\\..\\Microsoft.RTConvert.Converters.Tests\\TestData\\HN --out-file ofile.dcm --struct-colors \"0000FF, 00FF00, FFFF00\" --struct-names \"SPC, MPC, mandible\" --fill-holes \"True, False, false\""
+    }
+  }
+}

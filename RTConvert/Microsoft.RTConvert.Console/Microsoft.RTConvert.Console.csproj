@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <Platforms>x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.RTConvert.Common\Microsoft.RTConvert.Common.csproj" />
+    <ProjectReference Include="..\Microsoft.RTConvert.Converters\Microsoft.RTConvert.Converters.csproj" />
+    <ProjectReference Include="..\Microsoft.RTConvert.MedIO\Microsoft.RTConvert.MedIO.csproj" />
+  </ItemGroup>
+
+</Project>

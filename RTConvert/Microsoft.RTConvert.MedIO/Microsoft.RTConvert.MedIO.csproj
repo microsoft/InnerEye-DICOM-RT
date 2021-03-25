@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <Platforms>x64</Platforms>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="fo-dicom" Version="4.0.7" />
+    <PackageReference Include="lz4net" Version="1.0.15.93" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.RTConvert.Contours\Microsoft.RTConvert.Contours.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\DicomRT\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Extensions\VolumeRescaleConvert.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>VolumeRescaleConvert.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Extensions\VolumeRescaleConvert.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>VolumeRescaleConvert.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

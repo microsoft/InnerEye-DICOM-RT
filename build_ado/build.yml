@@ -1,0 +1,15 @@
+name: PR-InnerEye-DICOM-RT-$(Date:yyyyMMdd)$(Rev:-r)
+trigger: none
+jobs:
+  - job: Windows
+    pool:
+      vmImage: 'windows-2019'
+    steps:
+      - task: CredScan@3
+        condition: and(succeeded(), eq( variables['Agent.OS'], 'Windows_NT' ))
+      - task: ComponentGovernanceComponentDetection@0
+        inputs:
+          scanType: 'Register'
+          verbosity: 'Verbose'
+          alertWarningLevel: 'High'
+          failOnAlert: true

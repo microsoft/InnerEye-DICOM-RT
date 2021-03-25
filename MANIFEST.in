@@ -1,0 +1,2 @@
+include LICENSE
+graft src/InnerEye_DICOM_RT/bin
