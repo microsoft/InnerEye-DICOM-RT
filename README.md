@@ -123,7 +123,11 @@ To call RTConvert:
         out_file=OutputFile,
         struct_names=StructureNames,
         struct_colors=StructureColors,
-        fill_holes=FillHoles
+        fill_holes=FillHoles,
+        roi_interpreted_types=ROIInterpretedTypes,
+        manufacturer=Manufacturer,
+        interpreter=Interpreter,
+        modelId=ModelId
     )
 ```
 
@@ -145,8 +149,9 @@ where:
     If True then any contours found per slice will have their holes filled, otherwise contours will be returned
     as found.
 * `modelId` Model name and version from AzureML. E.g. Prostate:123
-* `manufacturer` Manufacturer for the DICOM-RT
-* `interpreter` Interpreter for the DICOM-RT    
+* `manufacturer` Manufacturer for the DICOM-RT (check DICOM-RT documentation)
+* `interpreter` Interpreter for the DICOM-RT (check DICOM-RT documentation)
+* `roi_interpreted_types` is a list of ROIInterpretedType. Possible values (None, CTV, ORGAN, EXTERNAL).
 
 [MIT License](LICENSE)
 

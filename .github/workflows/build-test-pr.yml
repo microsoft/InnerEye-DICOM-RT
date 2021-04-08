@@ -1,5 +1,4 @@
 name: PR BuildAndTest.CI
-
 on:
   push:
     branches: [ main ]
@@ -218,7 +217,6 @@ jobs:
 
       - name: Install test package
         run: pip install -i https://test.pypi.org/simple/ InnerEye-DICOM-RT
-
       - name: Test with pytest
         run: pytest tests
 
@@ -259,6 +257,5 @@ jobs:
 
       - name: Install package
         run: pip install InnerEye-DICOM-RT
-
       - name: Test with pytest
         run: pytest tests
