@@ -25,7 +25,7 @@ version = ''
 # populated (https://docs.github.com/en/actions/reference/environment-variables#default-environment-variables).
 # In particular, GITHUB_REF is the branch or tag ref that triggered the workflow.
 # If this was triggered by a tagged commit then GITHUB_REF will be: 'ref/tags/new_tag'.
-# Extract this tag and use it as a version string.
+# Extract this tag and use it as a version string
 # See also:
 # https://packaging.python.org/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/
 # https://github.com/pypa/gh-action-pypi-publish
