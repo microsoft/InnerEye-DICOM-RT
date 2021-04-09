@@ -25,7 +25,7 @@ version = ''
 # populated (https://docs.github.com/en/actions/reference/environment-variables#default-environment-variables).
 # In particular, GITHUB_REF is the branch or tag ref that triggered the workflow.
 # If this was triggered by a tagged commit then GITHUB_REF will be: 'ref/tags/new_tag'.
-# Extract this tag and use it as a version string.
+# Extract this tag and use it as a version string
 # See also:
 # https://packaging.python.org/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/
 # https://github.com/pypa/gh-action-pypi-publish
@@ -37,12 +37,12 @@ if github_ref and github_ref.startswith(GITHUB_REF_TAG_COMMIT):
 
 # Otherwise, if running from a GitHub Action, but not a tagged commit then GITHUB_RUN_NUMBER will be populated.
 # Use this as a post release number. For example if GITHUB_RUN_NUMBER = 124 then the version string will be
-# '0.1.1.post124'. Although this is discouraged, see:
+# '0.1.2.post124'. Although this is discouraged, see:
 # https://www.python.org/dev/peps/pep-0440/#post-releases
-# it is necessary here to avoid duplicate packages in Test.PyPI.
+# it is necessary here to avoid duplicate packages in Test.PyPI. 
 if not version:
     build_number = os.getenv('GITHUB_RUN_NUMBER', "1")
-    version = '0.1.1.post' + build_number
+    version = '0.1.2.post' + build_number
 
 setup(
     name='InnerEye-DICOM-RT',
