@@ -42,7 +42,7 @@ if github_ref and github_ref.startswith(GITHUB_REF_TAG_COMMIT):
 # it is necessary here to avoid duplicate packages in Test.PyPI.
 if not version:
     build_number = os.getenv('GITHUB_RUN_NUMBER', "1")
-    version = '0.1.1.post' + build_number
+    version = '0.1.2.post' + build_number
 
 setup(
     name='InnerEye-DICOM-RT',
