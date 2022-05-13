@@ -127,11 +127,11 @@ def _wrapper(args: List[str]) -> Tuple[str, str]:
 
     # Ensure that any dependences for dotnet are downloaded.
     # This should only happen once.
-    try:
-        dependencies_path = runtime.ensure_dependencies()
-    except Exception as e:
-        logger.error('Failed to ensure dependencies %s', str(e))
-        raise
+    # try:
+    #     dependencies_path = runtime.ensure_dependencies()
+    # except Exception as e:
+    #     logger.error('Failed to ensure dependencies %s', str(e))
+    #     raise
 
     dotnet_path = runtime.get_runtime_path()
 
