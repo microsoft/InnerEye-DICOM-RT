@@ -13,7 +13,6 @@ import os
 import pathlib
 from setuptools import setup, find_packages  # type: ignore
 
-
 here = pathlib.Path(__file__).parent.resolve()
 
 # Get the long description from the README file
@@ -66,6 +65,6 @@ setup(
     package_dir={"": "src"},
     include_package_data=True,
     install_requires=[
-        'dotnetcore2'
+        'dotnetcore2==2.1.23'
     ],
 )
