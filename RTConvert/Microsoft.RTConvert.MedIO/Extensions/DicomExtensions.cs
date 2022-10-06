@@ -37,8 +37,8 @@ namespace Microsoft.RTConvert.MedIO.Extensions
         /// <returns></returns>
         public static string GetTrimmedStringOrEmpty(this DicomDataset ds, DicomTag tag)
         {
-            // Changed for new OSS fo-dicom-desktop
-            return DicomTrim(ds.GetSingleValueOrDefault<string>(tag, string.Empty));
+            var value = ds.GetSingleValueOrDefault<string>(tag, string.Empty) ?? String.Empty;
+            return DicomTrim(value);
         }
 
         public static string DicomTrim(string s)
