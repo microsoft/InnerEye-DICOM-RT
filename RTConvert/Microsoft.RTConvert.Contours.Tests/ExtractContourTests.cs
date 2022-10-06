@@ -1066,7 +1066,7 @@ namespace Microsoft.RTConvert.Contours.Tests
                             var pointTypes = scaled.Select(_ => (byte)PathPointType.Line).ToArray();
                             var path = new GraphicsPath(scaled, pointTypes, FillMode.Alternate);
 
-                            var scaledString = string.Format("[{0}]", string.Join(",", scaled.Select(s => string.Format("({0}, {1})", s.X, s.Y))));
+                            var scaledString = string.Format("[{0}]", string.Join(",", scaled.Select(s => string.Format("({0}, {1})", s.X.ToString("0"), s.Y.ToString("0")))));
                             var pointTypesString = string.Format("[{0}]", string.Join(",", pointTypes.Select(p => p.ToString())));
 
                             stringBuilder.AppendLine(string.Format(
