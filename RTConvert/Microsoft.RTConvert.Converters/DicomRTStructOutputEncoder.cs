@@ -2,7 +2,6 @@
 // Licensed under the MIT license.
 namespace Microsoft.RTConvert.Converters
 {
-    using Dicom;
     using Microsoft.RTConvert.MedIO.Models;
     using Microsoft.RTConvert.MedIO.Models.DicomRT;
     using System.Collections.Generic;
@@ -13,7 +12,8 @@ namespace Microsoft.RTConvert.Converters
     using System.IO;
     using Microsoft.RTConvert.Models;
     using Microsoft.RTConvert.Contours;
-    using Microsoft.RTConvert.Converters.Models;
+    using FellowOakDicom;
+
     /// <summary>
     /// Creates RT Structs from segmentation output
     /// </summary>

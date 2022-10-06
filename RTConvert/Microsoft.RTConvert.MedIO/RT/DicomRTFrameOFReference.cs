@@ -5,7 +5,7 @@ namespace Microsoft.RTConvert.MedIO.RT
 {
     using System.Collections.Generic;
 
-    using Dicom;
+    using FellowOakDicom;
     
     /// <summary>
     /// The Referenced Frame of Reference Sequence (3006,0010) describes a set of frames of reference in

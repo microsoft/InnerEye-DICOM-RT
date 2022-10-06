@@ -3,7 +3,7 @@
 
 namespace Microsoft.RTConvert.MedIO.Readers
 {
-    using Dicom;
+    using FellowOakDicom;
     using Microsoft.RTConvert.Models;
 
     /// <summary>

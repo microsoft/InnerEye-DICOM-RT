@@ -13,8 +13,8 @@
     using System.Numerics;
     using System.Threading.Tasks;
 
-    using Dicom;
-    using Dicom.IO.Buffer;
+    using FellowOakDicom;
+    using FellowOakDicom.IO.Buffer;
 
     using Microsoft.RTConvert.MedIO.Models;
     using Microsoft.RTConvert.MedIO.Models.DicomRT;

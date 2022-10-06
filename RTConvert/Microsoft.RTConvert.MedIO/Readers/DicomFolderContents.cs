@@ -9,7 +9,7 @@ namespace Microsoft.RTConvert.MedIO.Readers
     using System.Linq;
     using System.Threading.Tasks;
 
-    using Dicom;
+    using FellowOakDicom;
     using RT;
 
     public sealed class DicomFolderContents

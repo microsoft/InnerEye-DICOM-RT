@@ -10,7 +10,7 @@
     using System.IO;
     using System.Linq;
     using System.Threading;
-    using Dicom;
+    using FellowOakDicom;
     using Microsoft.RTConvert.MedIO.Readers;
     using Microsoft.RTConvert.MedIO.Extensions;
     using Microsoft.RTConvert.Models;

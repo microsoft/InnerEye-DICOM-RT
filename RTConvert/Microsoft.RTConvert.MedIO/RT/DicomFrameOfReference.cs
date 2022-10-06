@@ -1,7 +1,7 @@
 ﻿// Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-using Dicom;
+using FellowOakDicom;
 using Microsoft.RTConvert.MedIO.Extensions;
 
 namespace Microsoft.RTConvert.MedIO.RT

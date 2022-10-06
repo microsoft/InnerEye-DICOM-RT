@@ -3,7 +3,7 @@
 
 namespace Microsoft.RTConvert.MedIO.Readers
 {
-    using Dicom;
+    using FellowOakDicom;
     using Microsoft.RTConvert.MedIO.RT;
     using System.Collections.Generic;
     using System.Linq;

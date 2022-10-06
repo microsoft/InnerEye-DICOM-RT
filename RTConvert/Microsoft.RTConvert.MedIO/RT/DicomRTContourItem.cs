@@ -6,7 +6,7 @@ namespace Microsoft.RTConvert.MedIO.RT
     using System.Collections.Generic;
     using System.Linq;
 
-    using Dicom;
+    using FellowOakDicom;
 
     using Extensions;
     using System.Globalization;

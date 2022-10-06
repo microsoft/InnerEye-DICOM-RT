@@ -8,7 +8,7 @@ namespace Microsoft.RTConvert.MedIO.RT
     using System.Globalization;
     using System.Linq;
 
-    using Dicom;
+    using FellowOakDicom;
 
     public class DicomRTContour
     {

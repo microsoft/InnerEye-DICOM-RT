@@ -12,7 +12,7 @@ namespace Microsoft.RTConvert.Converters.Tests
     using System.Threading;
 
     using NUnit.Framework;
-    using Dicom;
+    using FellowOakDicom;
 
     using Microsoft.RTConvert.Common;
     using Microsoft.RTConvert.Contours.Tests;

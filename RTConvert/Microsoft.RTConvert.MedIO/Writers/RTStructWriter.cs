@@ -3,7 +3,8 @@
 
 namespace Microsoft.RTConvert.MedIO.Writers
 {
-    using Dicom;
+    using FellowOakDicom;
+
     using Microsoft.RTConvert.MedIO.Models.DicomRT;
 
     public class RtStructWriter

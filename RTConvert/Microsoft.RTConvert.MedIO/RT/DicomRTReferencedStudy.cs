@@ -5,14 +5,14 @@ namespace Microsoft.RTConvert.MedIO.RT
 {
     using System.Collections.Generic;
 
-    using Dicom;
+    using FellowOakDicom;
 
     using Microsoft.RTConvert.MedIO.Extensions;
 
     public class DicomRTReferencedStudy
     {
 
-        public static readonly string StudyComponentManagementSopClass = DicomUID.StudyComponentManagementSOPClassRETIRED.UID;
+        public static readonly string StudyComponentManagementSopClass = DicomUID.StudyComponentManagementRETIRED.UID;
 
         public string ReferencedSOPClassUID { get; }
 

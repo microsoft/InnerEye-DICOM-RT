@@ -9,9 +9,10 @@ namespace Microsoft.RTConvert.MedIO.Tests
     using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
+    using FellowOakDicom;
+    using FellowOakDicom.Imaging;
+    using FellowOakDicom.IO.Buffer;
     using Dicom;
-    using Dicom.Imaging;
-    using Dicom.IO.Buffer;
 
     using NUnit.Framework;
 

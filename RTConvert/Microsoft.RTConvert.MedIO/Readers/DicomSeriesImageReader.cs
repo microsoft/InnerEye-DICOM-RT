@@ -5,11 +5,11 @@ namespace Microsoft.RTConvert.MedIO.Readers
 {
     using System;
     using System.Threading.Tasks;
-    using Dicom;
-    using Dicom.Imaging;
-    using Dicom.Imaging.Codec;
+    using FellowOakDicom;
     using Microsoft.RTConvert.MedIO.Models;
     using Microsoft.RTConvert.Models;
+    using FellowOakDicom.Imaging.Codec;
+    using FellowOakDicom.Imaging;
 
     /// <summary>
     /// DICOM reader class for decoding pixel data from a collection of DICOM datasets.

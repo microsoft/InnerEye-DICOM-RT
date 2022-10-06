@@ -5,7 +5,7 @@ namespace Microsoft.RTConvert.MedIO.Readers
 {
     using System;
     using System.Collections.Generic;
-    using Dicom;
+    using FellowOakDicom;
     using Microsoft.RTConvert.MedIO.Models;
     using Microsoft.RTConvert.Models;
 

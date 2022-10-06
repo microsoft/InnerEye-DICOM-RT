@@ -7,7 +7,7 @@ namespace Microsoft.RTConvert.MedIO.Tests
 {
     using System;
     using System.Linq;
-    using Dicom;
+    using FellowOakDicom;
     using Microsoft.RTConvert.MedIO.Extensions;
     using Microsoft.RTConvert.Models;
     using Microsoft.RTConvert.MedIO.Models;
