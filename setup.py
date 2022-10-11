@@ -65,6 +65,6 @@ setup(
     package_dir={"": "src"},
     include_package_data=True,
     install_requires=[
-        'dotnetcore2==2.1.23'
+        'dotnetcore2==3.1.23'
     ],
 )

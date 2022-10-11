@@ -56,7 +56,7 @@ dotnet publish RTConvert --configuration Release -p:Platform=x64
 ```
 
 This should create a folder with all the requirements for RTConvert at: 
-`RTConvert/Microsoft.RTConvert.Console/bin/x64/Release/netcoreapp2.1/publish/*`
+`RTConvert/Microsoft.RTConvert.Console/bin/x64/Release/netcoreapp3.1/publish/*`
 
 ### Echo
 
@@ -78,14 +78,14 @@ Finally, for consumption by the Python wrapper, this solution must be published:
 dotnet publish Echo --configuration Release -p:Platform=x64
 ```
 
-This should create a folder with all the requirements for Echo at: `Echo/Echo/bin/x64/Release/netcoreapp2.1/publish/*`
+This should create a folder with all the requirements for Echo at: `Echo/Echo/bin/x64/Release/netcoreapp3.1/publish/*`
 
 ## Python
 
 The Python wrapper is in `src/InnerEye_DICOM_RT/nifti_to_dicom_rt_converter.py`. It simply uses `subprocess.Popen` to invoke
 the .NET Core application passing in the relevant dll and command line arguments.
 
-It does require that the RTConvert and Echo published packages are copied to the folder: `src/InnerEye_DICOM_RT/bin/netcoreapp2.1`.
+It does require that the RTConvert and Echo published packages are copied to the folder: `src/InnerEye_DICOM_RT/bin/netcoreapp3.1`.
 
 Note that the github build action does this automatically, but if testing then this needs to be done
 manually.

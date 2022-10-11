@@ -1,4 +1,4 @@
-dotnetcore2==2.1.23
+dotnetcore2==3.1.23
 flake8==5.0.4
 mypy==0.800
 pydicom==2.1.2
