@@ -23,8 +23,45 @@ namespace Microsoft.RTConvert.Converters
 
         public SegmentationOutputEncoding OutputEncoding => SegmentationOutputEncoding.RTStruct;
 
+        //public ArraySegment<byte> EncodeStructures(
+        //    IEnumerable<(string name, Volume3D<byte> volume, RGBColor color, bool fillHoles, ROIInterpretedType roiInterpretedType)> outputStructuresWithMetadata,
+        //    IReadOnlyDictionary<string, MedicalVolume> inputChannels,
+        //    string modelNameAndVersion,
+        //    string manufacturer,
+        //    string interpreter)
+        //{
+        //    // the first channel is always the master contouring one
+        //    var masterImage = inputChannels.FirstOrDefault().Value;
+
+        //    var structureSetFile = CreateStructureSetFile(
+        //        masterImage,
+        //        outputStructuresWithMetadata,
+        //        modelNameAndVersion,
+        //        manufacturer,
+        //        interpreter);
+
+        //    return SerializeDicomFile(structureSetFile);
+        //}
+
         public ArraySegment<byte> EncodeStructures(
             IEnumerable<(string name, Volume3D<byte> volume, RGBColor color, bool fillHoles, ROIInterpretedType roiInterpretedType)> outputStructuresWithMetadata,
+            IReadOnlyDictionary<string, MedicalVolume> inputChannels,
+            string modelNameAndVersion,
+            string manufacturer,
+            string interpreter)
+        {
+            return SerializeDicomFile(
+                GetDicomFile(
+                    outputStructuresWithMetadata,
+                    inputChannels,
+                    modelNameAndVersion,
+                    manufacturer,
+                    interpreter
+                )
+             );
+        }
+
+        public DicomFile GetDicomFile(IEnumerable<(string name, Volume3D<byte> volume, RGBColor color, bool fillHoles, ROIInterpretedType roiInterpretedType)> outputStructuresWithMetadata,
             IReadOnlyDictionary<string, MedicalVolume> inputChannels,
             string modelNameAndVersion,
             string manufacturer,
@@ -40,7 +77,7 @@ namespace Microsoft.RTConvert.Converters
                 manufacturer,
                 interpreter);
 
-            return SerializeDicomFile(structureSetFile);
+            return structureSetFile;
         }
 
         private static ArraySegment<byte> SerializeDicomFile(DicomFile structureSetFile)

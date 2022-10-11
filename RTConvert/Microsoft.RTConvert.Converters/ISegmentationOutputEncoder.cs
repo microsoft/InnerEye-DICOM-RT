@@ -7,6 +7,7 @@ namespace Microsoft.RTConvert.Converters
     using Microsoft.RTConvert.MedIO.RT;
     using Microsoft.RTConvert.Models;
     using System;
+    using FellowOakDicom;
     using System.Collections.Generic;
 
     /// <summary>
@@ -54,5 +55,12 @@ namespace Microsoft.RTConvert.Converters
               string modelAndVersion,
               string institutionId,
               string interpreter);
+
+        DicomFile GetDicomFile(
+          IEnumerable<(string name, Volume3D<byte> volume, RGBColor color, bool fillHoles, ROIInterpretedType roiInterpretedType)> outputStructures,
+          IReadOnlyDictionary<string, MedicalVolume> inputChannels,
+          string modelAndVersion,
+          string institutionId,
+          string interpreter);
     }
 }
