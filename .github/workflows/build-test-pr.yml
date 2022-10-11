@@ -59,14 +59,14 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: echo
-        path: Echo/Echo/bin/${{ env.buildPlatform }}/${{ env.buildConfiguration }}/netcoreapp2.1/publish/*
+        path: Echo/Echo/bin/${{ env.buildPlatform }}/${{ env.buildConfiguration }}/netcoreapp3.1/publish/*
 
     - name: Upload RTConvert Build Artifacts
       if: matrix.os == 'ubuntu-latest' && matrix.solutionDir == './RTConvert'
       uses: actions/upload-artifact@v2
       with:
         name: rtconvert
-        path: RTConvert/Microsoft.RTConvert.Console/bin/${{ env.buildPlatform }}/${{ env.buildConfiguration }}/netcoreapp2.1/publish/*
+        path: RTConvert/Microsoft.RTConvert.Console/bin/${{ env.buildPlatform }}/${{ env.buildConfiguration }}/netcoreapp3.1/publish/*
 
   build-test-python:
     runs-on: ubuntu-latest
@@ -102,13 +102,13 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: echo
-          path: src/InnerEye_DICOM_RT/bin/netcoreapp2.1
+          path: src/InnerEye_DICOM_RT/bin/netcoreapp3.1
 
       - name: Download RTConvert Build Artifact
         uses: actions/download-artifact@v2
         with:
           name: rtconvert
-          path: src/InnerEye_DICOM_RT/bin/netcoreapp2.1
+          path: src/InnerEye_DICOM_RT/bin/netcoreapp3.1
 
       - name: Test with pytest
         run: pytest --cov=src --cov-report=html tests
