@@ -12,7 +12,7 @@ env:
   buildConfiguration: Release
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
-  dotnetVersion: 2.1.x
+  dotnetVersion: 3.1.x
   pythonVersion: 3.7
 
 jobs:
