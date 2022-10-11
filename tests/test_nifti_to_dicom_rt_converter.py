@@ -77,48 +77,44 @@ TestDicomVolumeLocation: Path = TEST_DATA_DIR / "HN"
 TestOutputFile: Path = THIS_DIR / "test.dcm"
 
 # Test fill holes.
-FillHoles: List[bool] = \
-    [
+FillHoles: List[bool] = [
         True, True, True, True,
         False, False, True, True,
         True, True, False, True,
         True, True, True, False,
         True, False, True, True,
         False, True
-    ]
+]
 
 # Test ROIInterpretedType.
-ROIInterpretedTypes: List[str] = \
-    [
+ROIInterpretedTypes: List[str] = [
         "ORGAN", "None", "CTV", "EXTERNAL",
         "ORGAN", "None", "CTV", "EXTERNAL",
         "ORGAN", "None", "CTV", "EXTERNAL",
         "ORGAN", "None", "CTV", "EXTERNAL",
         "ORGAN", "None", "CTV", "EXTERNAL",
         "ORGAN", "None"
-    ]
+]
 
 # Test structure colors.
-StructureColors: List[str] = \
-    [
+StructureColors: List[str] = [
         "FF0001", "FF0002", "FF0003", "FF0004",
         "FF0101", "FF0102", "FF0103", "FF0103",
         "FF0201", "FF02FF", "FF0203", "FF0204",
         "FF0301", "FF0302", "01FF03", "FF0304",
         "FF0401", "00FFFF", "FF0403", "FF0404",
         "FF0501", "FF0502"
-    ]
+]
 
 # Test structure names.
-StructureNames: List[str] = \
-    [
+StructureNames: List[str] = [
         "External", "parotid_l", "parotid_r", "smg_l",
         "smg_r", "spinal_cord", "brainstem", "globe_l",
         "Globe_r", "mandible", "spc_muscle", "mpc_muscle",
         "Cochlea_l", "cochlea_r", "lens_l", "lens_r",
         "optic_chiasm", "optic_nerve_l", "optic_nerve_r", "pituitary_gland",
         "lacrimal_gland_l", "lacrimal_gland_r"
-    ]
+]
 
 Manufacturer = "Contosos"
 Interpreter = "Ai"
