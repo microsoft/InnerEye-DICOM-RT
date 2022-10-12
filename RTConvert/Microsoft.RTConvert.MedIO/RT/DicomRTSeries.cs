@@ -55,7 +55,9 @@ namespace Microsoft.RTConvert.MedIO.RT
             ds.Add(DicomTag.SeriesNumber, string.Empty);
 
             // Type 3 tags - optional but useful
-            var now = DateTime.UtcNow;
+
+            //  Using DateTime.Now as some DICOM readers do not handle UTC offests. Local time is best guess.
+            var now = DateTime.Now;
             var date = now.ToString("yyyyMMdd", CultureInfo.InvariantCulture);
             var time = now.ToString("HHmmss", CultureInfo.InvariantCulture);
             ds.Add(DicomTag.SeriesDate, date);
