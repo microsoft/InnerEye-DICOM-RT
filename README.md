@@ -1,32 +1,34 @@
-# Introduction 
+# Introduction
 
-InnerEye-DICOM-RT contains tools to convert medical datasets in NIFTI format to DICOM-RT. Datasets converted using 
+InnerEye-DICOM-RT contains tools to convert medical datasets in NIFTI format to DICOM-RT. Datasets converted using
 this tool can be consumed directly by [InnerEye-DeepLearning](https://github.com/microsoft/InnerEye-DeepLearning).
 
 Most of the work is done by a .NET Core 2.1 project in RTConvert, written in C#. There is a very lightweight wrapper
 around this so that it can be consumed from Python. The wrapper relies on the PyPI package https://pypi.org/project/dotnetcore2/ which wraps up .NET Core 2.1.
 
-# Installing
+## Installing
 
-## Git for Windows
+### Git for Windows
 
 Get the installer from [Git for Windows](https://git-scm.com/download/win)
 
- The installer will prompt you to "Select Components". Make sure that you tick 
+ The installer will prompt you to "Select Components". Make sure that you tick
+
 * Git LFS (Large File Support)
 * Git Credential Manager for Windows
 
 After the installation, open a command prompt or the Git Bash:
-- Run `git lfs install` to set up the hooks in git
-- Run `git config --global core.autocrlf true` to ensure that line endings are working as expected
+
+* Run `git lfs install` to set up the hooks in git
+* Run `git config --global core.autocrlf true` to ensure that line endings are working as expected
 
 Clone the InnerEye-DICOM-RT repository on your machine: Run `git lfs clone --recursive https://github.com/microsoft/InnerEye-DICOM-RT`
 
-## Visual Studio / .NET Core
+### Visual Studio / .NET Core
 
 The C# components can be built with the .NET Core SDK. We use version 2.1 for compatibility with the PyPI package `dotnetcore2`.
- Installation instructions are here: https://docs.microsoft.com/en-us/dotnet/core/install/. 
-Visual Studio is not required to build, but if you wish to use it then for .Net Core 2.1 you need at least: 
+ Installation instructions are here: https://docs.microsoft.com/en-us/dotnet/core/install/.
+Visual Studio is not required to build, but if you wish to use it then for .Net Core 2.1 you need at least:
 [Visual Studio 2017 version 15.7](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link).
 
 ### RTConvert
@@ -55,12 +57,12 @@ Finally, for consumption by the Python wrapper, this solution must be published:
 dotnet publish RTConvert --configuration Release -p:Platform=x64
 ```
 
-This should create a folder with all the requirements for RTConvert at: 
+This should create a folder with all the requirements for RTConvert at:
 `RTConvert/Microsoft.RTConvert.Console/bin/x64/Release/netcoreapp2.1/publish/*`
 
 ### Echo
 
-Echo is a very simple application that takes 1 or 2 arguments. The first is echoed to `stdout`, and if a 
+Echo is a very simple application that takes 1 or 2 arguments. The first is echoed to `stdout`, and if a
 second argument is supplied then it is echoed to `stderr`. This is only required for units tests to establish
 that a .NET Core application can be called.
 
@@ -95,6 +97,7 @@ The Python package is created with:
 ```bash
 python setup.py sdist bdist_wheel
 ```
+
 which builds a source distribution and wheel to the `dist` folder.
 
 To run the Python tests:
@@ -132,6 +135,7 @@ To call RTConvert:
 ```
 
 where:
+
 * `in_file` is the path to the input Nifti file. This file is a 3D volume in [Nifti format](https://nifti.nimh.nih.gov/).
 * `reference_series` is the path to the input folder containing the reference DICOM series;
 * `out_file` is the path to the output DICOM-RT file;
@@ -153,6 +157,12 @@ where:
 * `interpreter` Interpreter for the DICOM-RT (check DICOM-RT documentation)
 * `roi_interpreted_types` is a list of ROIInterpretedType. Possible values (None, CTV, ORGAN, EXTERNAL).
 
+### Segmentation Timestamps
+
+In the process of converting from NIFTI masks to DICOM, InnerEye-DICOM-RT adds a timestamp tag to the series. This timestamp will be set to the ***local time of the compute resource that `rtconvert()` is run on***. This is as some DICOM readers do not handle timezones / UTC offsets from these tags and will result in erroneous times being displayed. Therefore, if your compute resource is running in a different timezone to the timezone you are viewing the DICOM files in, the timestamps may not be what you are expecting.
+
+## License
+
 [MIT License](LICENSE)
 
 **You are responsible for the performance, the necessary testing, and if needed any regulatory clearance for
@@ -162,7 +172,7 @@ where:
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+the rights to use your contribution. For details, visit the [Micrsoft CLA page](https://cla.opensource.microsoft.com).
 
 When you submit a pull request, a CLA bot will automatically determine whether you need to provide
 a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
@@ -174,8 +184,8 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 
 ## Trademarks
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
+trademarks or logos is subject to and must follow
 [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
 Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
 Any use of third-party trademarks or logos are subject to those third-party's policies.
