@@ -22,18 +22,18 @@ logger = logging.getLogger('test_rtconvert')
 logger.setLevel(logging.DEBUG)
 
 
-def test_get_version() -> None:
-    """
-    Test that .dotnet core can be called --info and that it is
-    running version 3.1.
-    """
-    (stdout, stderr) = get_version()
+# def test_get_version() -> None:
+#     """
+#     Test that .dotnet core can be called --info and that it is
+#     running version 3.1.
+#     """
+#     (stdout, stderr) = get_version()
 
-    logger.debug("stdout: %s", stdout)
-    logger.debug("stderr: %s", stderr)
+#     logger.debug("stdout: %s", stdout)
+#     logger.debug("stderr: %s", stderr)
 
-    assert stderr == ''
-    assert 'Microsoft.NETCore.App 3.1.' in stdout
+#     assert stderr == ''
+#     assert 'Microsoft.NETCore.App 3.1.' in stdout
 
 
 def test_echo() -> None:
