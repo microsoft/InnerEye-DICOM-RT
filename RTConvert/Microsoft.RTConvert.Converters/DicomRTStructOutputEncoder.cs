@@ -2,7 +2,6 @@
 // Licensed under the MIT license.
 namespace Microsoft.RTConvert.Converters
 {
-    using Dicom;
     using Microsoft.RTConvert.MedIO.Models;
     using Microsoft.RTConvert.MedIO.Models.DicomRT;
     using System.Collections.Generic;
@@ -13,7 +12,8 @@ namespace Microsoft.RTConvert.Converters
     using System.IO;
     using Microsoft.RTConvert.Models;
     using Microsoft.RTConvert.Contours;
-    using Microsoft.RTConvert.Converters.Models;
+    using FellowOakDicom;
+
     /// <summary>
     /// Creates RT Structs from segmentation output
     /// </summary>
@@ -23,8 +23,45 @@ namespace Microsoft.RTConvert.Converters
 
         public SegmentationOutputEncoding OutputEncoding => SegmentationOutputEncoding.RTStruct;
 
+        //public ArraySegment<byte> EncodeStructures(
+        //    IEnumerable<(string name, Volume3D<byte> volume, RGBColor color, bool fillHoles, ROIInterpretedType roiInterpretedType)> outputStructuresWithMetadata,
+        //    IReadOnlyDictionary<string, MedicalVolume> inputChannels,
+        //    string modelNameAndVersion,
+        //    string manufacturer,
+        //    string interpreter)
+        //{
+        //    // the first channel is always the master contouring one
+        //    var masterImage = inputChannels.FirstOrDefault().Value;
+
+        //    var structureSetFile = CreateStructureSetFile(
+        //        masterImage,
+        //        outputStructuresWithMetadata,
+        //        modelNameAndVersion,
+        //        manufacturer,
+        //        interpreter);
+
+        //    return SerializeDicomFile(structureSetFile);
+        //}
+
         public ArraySegment<byte> EncodeStructures(
             IEnumerable<(string name, Volume3D<byte> volume, RGBColor color, bool fillHoles, ROIInterpretedType roiInterpretedType)> outputStructuresWithMetadata,
+            IReadOnlyDictionary<string, MedicalVolume> inputChannels,
+            string modelNameAndVersion,
+            string manufacturer,
+            string interpreter)
+        {
+            return SerializeDicomFile(
+                GetDicomFile(
+                    outputStructuresWithMetadata,
+                    inputChannels,
+                    modelNameAndVersion,
+                    manufacturer,
+                    interpreter
+                )
+             );
+        }
+
+        public DicomFile GetDicomFile(IEnumerable<(string name, Volume3D<byte> volume, RGBColor color, bool fillHoles, ROIInterpretedType roiInterpretedType)> outputStructuresWithMetadata,
             IReadOnlyDictionary<string, MedicalVolume> inputChannels,
             string modelNameAndVersion,
             string manufacturer,
@@ -40,7 +77,7 @@ namespace Microsoft.RTConvert.Converters
                 manufacturer,
                 interpreter);
 
-            return SerializeDicomFile(structureSetFile);
+            return structureSetFile;
         }
 
         private static ArraySegment<byte> SerializeDicomFile(DicomFile structureSetFile)

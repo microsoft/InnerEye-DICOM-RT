@@ -9,7 +9,7 @@ namespace Microsoft.RTConvert.MedIO.Tests
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using Dicom;
+    using FellowOakDicom;
     using Microsoft.RTConvert.MedIO.Extensions;
     using Microsoft.RTConvert.Models;
     using Microsoft.RTConvert.MedIO.Readers;

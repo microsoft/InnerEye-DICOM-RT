@@ -8,7 +8,7 @@ namespace Microsoft.RTConvert.MedIO.Models.DicomRT
     using Readers;
     using RT;
     using System.Linq;
-    using Dicom;
+    using FellowOakDicom;
 
     /// <summary>
     /// Encodes an instance of the DICOM RT-STRUCT IOD. With facilities to serialize and restore from a DICOM dataset.

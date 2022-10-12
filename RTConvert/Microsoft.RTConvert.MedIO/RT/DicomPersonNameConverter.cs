@@ -4,7 +4,7 @@
 namespace Microsoft.RTConvert.MedIO.RT
 {
     using System.Globalization;
-    using Dicom;
+    using FellowOakDicom;
 
     public class DicomPersonNameConverter
     {

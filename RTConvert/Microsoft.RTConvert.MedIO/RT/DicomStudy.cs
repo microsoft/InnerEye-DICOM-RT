@@ -3,7 +3,7 @@
 
 namespace Microsoft.RTConvert.MedIO.RT
 {
-    using Dicom;
+    using FellowOakDicom;
     using Extensions;
 
     public class DicomStudy

@@ -3,7 +3,7 @@
 
 namespace Microsoft.RTConvert.MedIO.RT
 {
-    using Dicom;
+    using FellowOakDicom;
 
     using Extensions;
     using System;
@@ -55,7 +55,7 @@ namespace Microsoft.RTConvert.MedIO.RT
             ds.Add(DicomTag.SeriesNumber, string.Empty);
 
             // Type 3 tags - optional but useful
-            var now = DateTime.UtcNow;
+            var now = DateTime.Now;
             var date = now.ToString("yyyyMMdd", CultureInfo.InvariantCulture);
             var time = now.ToString("HHmmss", CultureInfo.InvariantCulture);
             ds.Add(DicomTag.SeriesDate, date);

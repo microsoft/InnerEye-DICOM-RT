@@ -4,7 +4,7 @@
 namespace Microsoft.RTConvert.MedIO.Readers
 {
     using System.Collections.Generic;
-    using Dicom;
+    using FellowOakDicom;
 
     /// <summary>
     /// Readonly collection of CT/MR images associated with a given series. 

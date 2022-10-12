@@ -4,7 +4,7 @@
 namespace Microsoft.RTConvert.MedIO.Models
 {
     using System;
-    using Dicom;
+    using FellowOakDicom;
     using Microsoft.RTConvert.Models;
 
     /// <summary>

@@ -6,7 +6,7 @@ namespace Microsoft.RTConvert.Common
     using System;
     using System.Collections.Generic;
 
-    using Dicom;
+    using FellowOakDicom;
 
     /// <summary>
     /// Channel id and files

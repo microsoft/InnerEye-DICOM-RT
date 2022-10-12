@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <Platforms>x64</Platforms>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="fo-dicom" Version="4.0.7" />
+    <PackageReference Include="fo-dicom" Version="5.0.3" />
     <PackageReference Include="lz4net" Version="1.0.15.93" />
   </ItemGroup>
 

@@ -8,7 +8,7 @@ namespace Microsoft.RTConvert.Common.Helpers
     using System.Diagnostics.CodeAnalysis;
     using System.IO;
     using System.IO.Compression;
-    using Dicom;
+    using FellowOakDicom;
 
     /// <summary>
     /// DICOM compression helpers.

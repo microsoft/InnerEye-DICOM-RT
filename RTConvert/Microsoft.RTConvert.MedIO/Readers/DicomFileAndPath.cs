@@ -7,7 +7,7 @@ namespace Microsoft.RTConvert.MedIO.Readers
     using System;
     using System.Diagnostics;
     using System.IO;
-    using Dicom;
+    using FellowOakDicom;
 
     /// <summary>
     /// Read only tuple of DicomFile and its original path

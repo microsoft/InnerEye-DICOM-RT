@@ -4,6 +4,9 @@
 namespace Dicom
 {
     using System;
+
+    using FellowOakDicom;
+
     using Microsoft.RTConvert.MedIO.Extensions;
     using Microsoft.RTConvert.Models;
 

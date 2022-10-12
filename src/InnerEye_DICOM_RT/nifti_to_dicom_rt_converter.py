@@ -87,7 +87,7 @@ def _make_dll_path(dll_name: str) -> Path:
     :return: Expected path to dll.
     """
     current_folder = Path(__file__).parent.resolve()
-    return current_folder / "bin" / "netcoreapp2.1" / dll_name
+    return current_folder / "bin" / "netcoreapp3.1" / dll_name
 
 
 def _format_bool(b: bool) -> str:

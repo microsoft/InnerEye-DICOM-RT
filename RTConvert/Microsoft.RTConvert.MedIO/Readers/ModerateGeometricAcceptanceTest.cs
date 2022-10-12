@@ -5,7 +5,7 @@
 namespace Microsoft.RTConvert.MedIO.Readers
 {
     using System;
-    using Dicom;
+    using FellowOakDicom;
     using Microsoft.RTConvert.Models;
 
     public class ModerateGeometricAcceptanceTest : IVolumeGeometricAcceptanceTest

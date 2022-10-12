@@ -11,7 +11,7 @@ namespace Microsoft.RTConvert.Converters.Tests
     using System.Linq;
     using System.Collections.Generic;
 
-    using Dicom;
+    using FellowOakDicom;
 
     using Microsoft.RTConvert.Models;
     using Microsoft.RTConvert.Common.Helpers;

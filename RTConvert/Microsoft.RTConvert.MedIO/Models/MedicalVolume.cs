@@ -7,7 +7,7 @@ namespace Microsoft.RTConvert.MedIO.Models
     using Readers;
     using System.Diagnostics;
     using System.Collections.Generic;
-    using Dicom;
+    using FellowOakDicom;
     using Microsoft.RTConvert.Models;
 
     public class MedicalVolume
