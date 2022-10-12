@@ -23,7 +23,7 @@ namespace Microsoft.RTConvert.Converters
 
         public SegmentationOutputEncoding OutputEncoding => SegmentationOutputEncoding.RTStruct;
 
-        public ArraySegment<byte> EncodeStructures(
+        public DicomFile EncodeStructures(
             IEnumerable<(string name, Volume3D<byte> volume, RGBColor color, bool fillHoles, ROIInterpretedType roiInterpretedType)> outputStructuresWithMetadata,
             IReadOnlyDictionary<string, MedicalVolume> inputChannels,
             string modelNameAndVersion,
@@ -40,21 +40,7 @@ namespace Microsoft.RTConvert.Converters
                 manufacturer,
                 interpreter);
 
-            return SerializeDicomFile(structureSetFile);
-        }
-
-        private static ArraySegment<byte> SerializeDicomFile(DicomFile structureSetFile)
-        {
-            using (var memoryStream = new MemoryStream())
-            {
-                structureSetFile.Save(memoryStream);
-
-                if (!memoryStream.TryGetBuffer(out ArraySegment<byte> output))
-                {
-                    throw new InvalidOperationException("Could not extract Array-Segment instance from Memory-Stream");
-                }
-                return output;
-            }
+            return structureSetFile;
         }
 
         private static DicomFile CreateStructureSetFile(

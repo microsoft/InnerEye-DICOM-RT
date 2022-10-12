@@ -3,6 +3,7 @@
 
 namespace Microsoft.RTConvert.Converters
 {
+    using Dicom;
     using Microsoft.RTConvert.MedIO.Models;
     using Microsoft.RTConvert.MedIO.RT;
     using Microsoft.RTConvert.Models;
@@ -40,7 +41,7 @@ namespace Microsoft.RTConvert.Converters
         SegmentationOutputEncoding OutputEncoding { get; }
 
         /// <summary>
-        /// Encodes the segmentation output in a binary format. 
+        /// Encodes the segmentation output into a DicomFile object. 
         /// </summary>
         /// <param name="outputStructures">The output structures from eh machine learning</param>
         /// <param name="inputChannels">The input channels that were used to generate the structures</param>
@@ -48,7 +49,7 @@ namespace Microsoft.RTConvert.Converters
         /// <param name="manufacturer">The creator of the model.</param>
         /// <param name="interpreter">The interpreter of the model.</param>
         /// <returns></returns>
-        ArraySegment<byte> EncodeStructures(
+        DicomFile EncodeStructures(
               IEnumerable<(string name, Volume3D<byte> volume, RGBColor color, bool fillHoles, ROIInterpretedType roiInterpretedType)> outputStructures,
               IReadOnlyDictionary<string, MedicalVolume> inputChannels,
               string modelAndVersion,
