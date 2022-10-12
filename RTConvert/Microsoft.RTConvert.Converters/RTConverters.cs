@@ -275,14 +275,14 @@ namespace Microsoft.RTConvert.Converters
 
             var outputEncoder = new DicomRTStructOutputEncoder();
 
-            var outputStructureBytes = outputEncoder.EncodeStructures(
+            var outputDicomFile = outputEncoder.EncodeStructures(
                 volumesWithMetadata,
                 new Dictionary<string, MedicalVolume>() { { "", referenceVolume } },
                 modelNameAndVersion,
                 manufacturer,
                 interpreter);
 
-            File.WriteAllBytes(dcmFilename, outputStructureBytes.Array);
+            outputDicomFile.Save(dcmFilename);
         }
     }
 }

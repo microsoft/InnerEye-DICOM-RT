@@ -52,14 +52,12 @@ namespace Microsoft.RTConvert.Converters.Tests
 
             var outputEncoder = new DicomRTStructOutputEncoder();
 
-            var outputStructureBytes = outputEncoder.EncodeStructures(
+            var dcm = outputEncoder.EncodeStructures(
                 volumesWithMetadata,
                 new Dictionary<string, MedicalVolume>() { { "", referenceVolume } },
                 "modelX:1",
                 "manufacturer",
                 "interpreter");
-
-            var dcm = DicomFile.Open(new MemoryStream(outputStructureBytes.Array));
 
             // Check the output format (should be RT struct)
             Assert.AreEqual(DicomUID.RTStructureSetStorage, dcm.FileMetaInfo.MediaStorageSOPClassUID);
